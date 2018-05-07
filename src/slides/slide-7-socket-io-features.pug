@@ -1,15 +1,49 @@
-- var notes= ''
-
-section(data-notes=notes)
+section
   section
     h3.title Socket.io features
 
   section
-    h4.title Confiabilidade
-    h4.title.fragment Suporte à reconexão
-    h4.title.fragment Detecção de desconexão
-    h4.title.fragment Suporte à arquivos binários
-    h4.title.fragment API simples
-    h4.title.fragment Cross-browser
-    h4.title.fragment Suporte à multiplexing
-    h4.title.fragment Suporte à salas
+    h3.title Confiabilidade
+    h4 Funciona mesmo na presençca de load balancers, proxies, firewalls e anti-vírus
+
+  section
+    h3.title Suporte à reconexão
+    h4 O socket.io tentará sempre efetuar a reconexão em caso de queda do servidor
+
+  section
+    h4.title Detecção de desconexão
+    h4 Mecanismo de heartbeat
+
+  section
+    h3.title Suporte à arquivos binários
+    h4 Qualquer aruivo pode ser enviado, até mesmo buffers(node.js) e blobs(browser)
+
+  section
+    h4.title API simples
+    pre
+      code.javascript.
+        io.on('connection', function(socket){
+          // emit an event to the socket
+          socket.emit('request', /* */);
+          // emit an event to all connected sockets
+          io.emit('broadcast', /* */);
+
+          // listen to the event
+          socket.on('reply', function(){ /* */ });
+        });
+
+  section
+    h4.title Cross-browser
+    img(src="img/socket-browsers.svg" style="background-color:#fff")
+
+  section
+    h3.title Suporte à multiplexing
+    h4 O socket.io permite você criar <i>namespaces</i>, que funcionam como canais mas compartilham a mesma conexão
+
+  section
+    h3.title Suporte à salas
+    h4 Dentro de cada <i>namespace</i>, você ainda pode criar salas, que os usuários podem entrar ou sair.
+    h4 Esta <i>feature</i> é útil para que você possa fazer o envio de uma mensagem para um erto grupo de usuários
+
+  section(data-background="img/wow.gif")
+
