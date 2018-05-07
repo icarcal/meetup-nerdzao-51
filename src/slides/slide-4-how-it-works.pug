@@ -1,0 +1,24 @@
+section
+  section
+    h3.title Como o socket.io funciona?
+
+  section(data-background="img/magic.gif")
+
+  section
+    ul
+      li Primeiro o socket.io decide qual transporte vai utilizar
+        ul.fragment
+          li <i>xhr-polling</i>
+          li <i>jsonp-polling</i>
+          li <i>websocket</i>
+
+  section
+    ul
+      li Em seguida é feito o <i>handshake</i>(via POST) entre client e server e são gerados os seguintes dados:
+      ul.fragment
+        li Id da sessão
+        li Número de segundos para o próximo <i>heartbeat</i>
+        li Número de segundos que a conexão ficará aberta se não houver nenhum transporte de dados nessa conexão
+
+  section
+    h3 O comportamento da conexão após o <i class="title">handshake</i> é determinada pela layer de transporte

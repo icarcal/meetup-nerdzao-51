@@ -1,0 +1,17 @@
+- var notes= ''
+
+section(data-notes=notes)
+  section
+    h3.title Pooling e Long pooling?
+
+  section
+    h3.title Pooling
+    h4.
+      É  a técnica onde o cliente consulta de x em x tempo por alguma mudança de status no servidor
+
+  section
+    h3.title Long pooling
+    h4.
+      O client envia apenas uma requisição ao servidor que a "segura" até o momento de retornar dados.
+    h4.
+      Quando os dados são retornados ao client, ele envia uma nova requisição ao server que a "segura" novamente.
