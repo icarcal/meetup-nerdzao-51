@@ -1,0 +1,19 @@
+- var notes= ''
+
+section(data-notes=notes)
+  section
+    h3.title Escalando a aplicação
+
+  section
+    h3.title NGINX
+    p sticky sessions
+    p ip_hash
+
+  section
+    h3.title REDIS
+    pre
+      code.
+        Client  <--  Worker 1 emit -->  Redis
+        Client  <--  Worker 2  <----------|
+        Client  <--  Worker 3  <----------|
+        Client  <--  Worker 4  <----------|
